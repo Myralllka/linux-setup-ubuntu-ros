@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace
+
 set -e
 
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
@@ -15,19 +17,32 @@ APPCONFIG_PATH=$MY_PATH/appconfig
 cd $MY_PATH
 git submodule update --init --recursive
 
+MY_DISTRO=$(cat /etc/*-release | tr [:upper:] [:lower:] | grep -Poi '(debian|ubuntu|manjaro|arch)' | uniq | head -n 1)
+
 # install packages
-sudo apt-get -y update
+if [[ $MY_DISTRO == "arch" || $MY_DISTRO == "manjaro" ]]; then
+	source ./install_arch_manjaro.sh;
+	exit 0;
+elif [[ $MY_DISTRO == "ubuntu" ]]; then 
+	echo "Distro is Ubuntu. Continuing...";
+else 
+	echo "Unimplemented OS. Exiting...";
+	exit 1;        
+fi
+
+# update the system
+sudo apt-get update
 
 subinstall_params=""
 unattended=0
 for param in "$@"
 do
-  echo $param
-  if [ $param="--unattended" ]; then
-    echo "installing in unattended mode"
-    unattended=1
-    subinstall_params="--unattended"
-  fi
+    echo $param
+        if [ $param="--unattended" ]; then
+        echo "installing in unattended mode"
+        unattended=1
+        subinstall_params="--unattended"
+    fi
 done
 
 var1="18.04"
@@ -239,3 +254,4 @@ toilet All Done
 
 # say some tips to the new user
 echo "Hurray, the 'Linux Setup' should be ready, try opening a new terminal."
+
