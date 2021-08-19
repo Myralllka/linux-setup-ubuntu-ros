@@ -20,7 +20,7 @@ done
 sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm
 
 # base
-sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry i3-gaps
+sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry 
 
 # install yay 
 git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay; makepkg -si; cd -;
@@ -33,7 +33,7 @@ Server = http://repo.archlinux.fr/$arch
 
 yay -S ipython jupyter-console powerline edex-ui
 
-yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-aur perl-anyevent perl-anyevent-i3
+yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-systemd-git perl-anyevent perl-anyevent-i3
 
 if [ "$unattended" == "0" ]
 then
@@ -41,5 +41,35 @@ then
 fi
 
 # install TMUX
-bash $APPCONFIG_PATH/tmux/install.sh $subinstall_params
+# bash $APPCONFIG_PATH/tmux/install.sh $subinstall_params
+sudo pacman -S tmux
+
+# install RANGER
+sudo pacman -S ranger
+
+# install VIM
+sudo pacman -S vim
+
+# install HTOP-VIM
+yay -S htop-vim
+yay -S ytop
+
+# install URXVT
+
+# install FONTS POWERLINE
+
+# install NVIM
+
+# install ZSH
+
+# install i3
+yay -S i3 i3-gaps polybar
+
+# install LATEX and PDF support
+
+# install FZF
+
+# install TMUXINATOR
+yay -S tmuxinator
+
 
