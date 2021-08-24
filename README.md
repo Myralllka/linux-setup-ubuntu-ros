@@ -1,11 +1,13 @@
-# klaxalk's Linux environment
+# Myrallka Linux environment (based on klaxalk's)
+for Ubuntu and Arch Linux
 
-| Ubuntu               | Architecture | Status                                                                                                                                                           |
+| OS                   | Architecture | Status                                                                                                                                                           |
 | -------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 18.04 Bionic         | AMD64        | [![Build Status](https://github.com/klaxalk/linux-setup/workflows/Bionic/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                             |
-| 18.04 Bionic         | arm64        |                                                                                                                                                                  |
-| 20.04 Focal          | AMD64        | [![Build Status](https://github.com/klaxalk/linux-setup/workflows/Focal/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                              |
-| 20.04 Focal          | arm64        |                                                                                                                                                                  |
+| Ubuntu 18.04 Bionic         | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Bionic/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                             |
+| Ubuntu 18.04 Bionic         | arm64        |                                                                                                                                                                  |
+| Ubuntu 20.04 Focal          | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Focal/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                              |
+| Ubuntu 20.04 Focal          | arm64        |                                                                                                                                                                  |
+| Arch Linux 				  | AMD64  		 |  [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Arch/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                              |
 
 ## Summary
 
