@@ -1,0 +1,23 @@
+name: Arch
+
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Archlinux
+      run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
+    - name: Docker hello-world
+      run: |
+        sudo pacman --noconfirm -Syu docker
+        sudo systemctl start docker
+        docker run --rm hello-world
+    - name: Install
+      run: ./.ci/install_arch.sh

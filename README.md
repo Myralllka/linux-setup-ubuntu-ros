@@ -3,11 +3,12 @@ for Ubuntu and Arch Linux
 
 | OS                   | Architecture | Status                                                                                                                                                           |
 | -------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ubuntu 18.04 Bionic         | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Bionic/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                             |
+| Ubuntu 18.04 Bionic         | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Bionic/badge.svg)](https://github.com/Myralllka/linux-setup/actions)                             |
 | Ubuntu 18.04 Bionic         | arm64        |                                                                                                                                                                  |
-| Ubuntu 20.04 Focal          | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Focal/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                              |
+| Ubuntu 20.04 Focal          | AMD64        | [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Focal/badge.svg)](https://github.com/Myralllka/linux-setup/actions)                              |
 | Ubuntu 20.04 Focal          | arm64        |                                                                                                                                                                  |
-| Arch Linux 				  | AMD64  		 |  [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Arch/badge.svg)](https://github.com/klaxalk/linux-setup/actions)                              |
+| Arch Linux 				  | AMD64  		 |  [![Build Status](https://github.com/Myralllka/linux-setup/workflows/Arch/badge.svg)](https://github.com/Myralllka/linux-setup/actions)                              |
+
 
 ## Summary
 
