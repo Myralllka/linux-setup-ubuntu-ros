@@ -7,7 +7,7 @@ export GIT_PATH=~/git
 export RUN_TMUX=true
 
 # use Athame in every normal terminal
-export USE_ATHAME=true
+export USE_ATHAME=false
 
 # list (space-separated) of profile names for customizing configs
 export PROFILES="COLORSCHEME_DARK"

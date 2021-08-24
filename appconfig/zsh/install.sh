@@ -21,7 +21,7 @@ do
   fi
 done
 
-default=y
+default=n
 while true; do
   if [[ "$unattended" == "1" ]]
   then
@@ -61,6 +61,9 @@ while true; do
     if [ "$num" -lt "1" ]; then
       cp $APP_PATH/dotzshrc_template $HOME/.zshrc
     fi
+    # add k plugin
+    source $HOME/git/linux-setup/appconfig/zsh/install_k_plugin.sh
+
 
     break
   elif [[ $response =~ ^(n|N)=$ ]]
