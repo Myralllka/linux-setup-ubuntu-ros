@@ -22,21 +22,22 @@ do
 done
 
 default=y
-while true; do
   if [[ "$unattended" == "1" ]]
   then
     resp=$default
   else
-    [[ -t 0 ]] && { read -t 10 -n 2 -p $'\e[1;32mInstall zshell (without athame)? [y/n] (default: '"$default"$')\e[0m\n' resp || resp=$default ; }
+    [[ -t 0 ]] && { read -t 10 -n 2 -p $'\e[1;32mInstall autosuggestions plugin for zsh? [y/n] (default: '"$default"$')\e[0m\n' resp || resp=$default ; }
   fi
   response=`echo $resp | sed -r 's/(.*)$/\1=/'`
 
   if [[ $response =~ ^(y|Y)=$ ]]
   then
-	sudo apt-get install zsh
-	sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+  elif [[ $response =~ ^(n|N)=$ ]]
+  then
     break
   else
     echo " What? \"$resp\" is not a correct answer. Try y+Enter."
   fi
-done

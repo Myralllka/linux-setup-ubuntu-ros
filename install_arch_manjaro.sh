@@ -61,6 +61,14 @@ yay -S ytop
 # install NVIM
 
 # install ZSH
+yay -S zsh 
+# install oh my zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+export ./appconfig/zsh/install_autosuggestion_plugin.sh
+export ./appconfig/zsh/install_k_plugin.sh
+export ./appconfig/zsh/install_syntax_plugin.sh
+export ./appconfig/zsh/install_z_plugin.sh
 
 # install i3
 yay -S i3 i3-gaps polybar
