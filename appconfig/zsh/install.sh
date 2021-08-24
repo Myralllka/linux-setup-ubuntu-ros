@@ -33,8 +33,19 @@ while true; do
 
   if [[ $response =~ ^(y|Y)=$ ]]
   then
+
+	sudo apt-get -y install curl
+	
 	sudo apt-get install zsh
-	sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+	
+    # install oh-my-zsh
+    [ ! -e "$HOME/.oh-my-zsh" ] && sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -) --unattended --keep-zshrc --skip-chsh"
+
+	# symlink the .zshrc
+    num=`cat $HOME/.zshrc | grep "dotzshrc" | wc -l`
+	if [ "$num" -lt "1" ]; then
+		cp $APP_PATH/dotzshrc_template $HOME/.zshrc
+	fi
     break
   else
     echo " What? \"$resp\" is not a correct answer. Try y+Enter."

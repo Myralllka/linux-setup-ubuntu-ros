@@ -31,7 +31,7 @@ SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 " >> /etc/pacman.conf
 
-yay -S ipython jupyter-console powerline edex-ui
+yay -S ipython jupyter-console powerline edex-ui ruby-colorls
 
 yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-systemd-git perl-anyevent perl-anyevent-i3
 
