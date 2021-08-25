@@ -14,8 +14,8 @@ jobs:
         with:
           entrypoint: /usr/bin/bash
           run: |
-            pacman --noconfirm -Syu 
-            pacman --noconfirm -S base-devel 
-            pacman -S curl git
-            git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup
-            bash ./.ci/instal_arch.sh
+            pacman --noconfirm -Syu &&
+            pacman --noconfirm -S base-devel &&
+            pacman -S curl git &&
+            git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup &&
+            bash ./.ci/instal_arch.sh;
