@@ -3,6 +3,7 @@
 set -e
 
 find ./ -type f -exec sed -i -e 's/sudo pacman/pacman/g' {} \;
+find ./ -type f -exec sed -i -e 's/\(^.*yay.*$\)//g' {} \;
 
 pacman --noconfirm -S git
 
