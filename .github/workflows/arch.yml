@@ -20,4 +20,4 @@ jobs:
       - name: Test installation
         run: |
           ls -la
-          git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup && ls -la && bash ./.ci/install_arch.sh;
+          bash .ci/install_arch.sh;
