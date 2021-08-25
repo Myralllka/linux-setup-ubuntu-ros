@@ -69,10 +69,10 @@ sudo pacman -S zsh --noconfirm
 # install oh my zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-export ./appconfig/zsh/install_autosuggestion_plugin.sh
-export ./appconfig/zsh/install_k_plugin.sh
-export ./appconfig/zsh/install_syntax_plugin.sh
-export ./appconfig/zsh/install_z_plugin.sh
+source ./appconfig/zsh/install_autosuggestion_plugin.sh
+source ./appconfig/zsh/install_k_plugin.sh
+source ./appconfig/zsh/install_syntax_plugin.sh
+source ./appconfig/zsh/install_z_plugin.sh
 
 # install i3
 sudo pacman -S i3 i3-gaps --noconfirm
