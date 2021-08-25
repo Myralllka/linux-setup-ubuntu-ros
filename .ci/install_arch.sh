@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -S git
+pacman -S git
 
 echo "running the main install.sh"
 
