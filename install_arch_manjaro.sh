@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # update the system
-sudo pacman -Suy
+sudo pacman -Suy --noconfirm
 
 subinstall_params=""
 unattended=0
@@ -17,10 +17,12 @@ do
 done
 
 # graphics
-sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm
+sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm --noconfirm
+
 
 # base
-sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry 
+sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry --noconfirm
+
 
 # install yay 
 git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay; makepkg -si; cd -;
@@ -31,9 +33,9 @@ SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 " >> /etc/pacman.conf
 
-yay -S ipython jupyter-console powerline edex-ui ruby-colorls
+yay -S ipython jupyter-console powerline edex-ui ruby-colorls --noconfirm 
 
-yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-systemd-git perl-anyevent perl-anyevent-i3
+yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-systemd-git perl-anyevent perl-anyevent-i3 --noconfirm
 
 if [ "$unattended" == "0" ]
 then
@@ -42,17 +44,17 @@ fi
 
 # install TMUX
 # bash $APPCONFIG_PATH/tmux/install.sh $subinstall_params
-sudo pacman -S tmux
+sudo pacman -S tmux --noconfirm
 
 # install RANGER
-sudo pacman -S ranger
+sudo pacman -S ranger --noconfirm
 
 # install VIM
-sudo pacman -S vim
+sudo pacman -S vim --noconfirm
 
 # install HTOP-VIM
-yay -S htop-vim
-yay -S ytop
+yay -S htop-vim --noconfirm
+yay -S ytop --noconfirm
 
 # install URXVT
 
@@ -61,7 +63,7 @@ yay -S ytop
 # install NVIM
 
 # install ZSH
-yay -S zsh 
+yay -S zsh --noconfirm
 # install oh my zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -71,13 +73,13 @@ export ./appconfig/zsh/install_syntax_plugin.sh
 export ./appconfig/zsh/install_z_plugin.sh
 
 # install i3
-yay -S i3 i3-gaps polybar
+yay -S i3 i3-gaps polybar --noconfirm
 
 # install LATEX and PDF support
 
 # install FZF
 
 # install TMUXINATOR
-yay -S tmuxinator
+yay -S tmuxinator --noconfirm
 
 
