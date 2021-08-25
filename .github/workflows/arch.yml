@@ -9,8 +9,12 @@ on:
 jobs:
   Arch_Linux:
     runs-on: ubuntu-latest
+    container:
+      image: archlinux
     steps:
-      - uses: docker://archlinux
-        with:
-          entrypoint: /usr/bin/bash
-          run: git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup && bash ./.ci/instal_arch.sh;
+      - name: Update Arch
+        run: |
+          pacman --noconfirm -Suy
+          pacman -S --needed --noconfirm git jq pacman-contrib openssh curl
+      - name: Test installation
+        run: git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup && bash ./.ci/instal_arch.sh;
