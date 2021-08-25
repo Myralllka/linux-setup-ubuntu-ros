@@ -27,11 +27,11 @@ sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry --noconfirm
 # install yay 
 git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay; makepkg -si; cd -;
 
-echo "
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
-" >> /etc/pacman.conf
+#echo "
+#[archlinuxfr]
+#SigLevel = Never
+#Server = http://repo.archlinux.fr/$arch
+#" >> /etc/pacman.conf
 
 sudo pacman -Sy
 
