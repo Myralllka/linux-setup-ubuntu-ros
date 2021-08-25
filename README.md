@@ -1,4 +1,4 @@
-# Myrallka Linux environment (based on klaxalk's)
+# Myrallka Linux environment (based on [klaxalk's](https://github.com/klaxalk/linux-setup))
 for Ubuntu and Arch Linux
 
 | OS                   | Architecture | Status                                                                                                                                                           |
