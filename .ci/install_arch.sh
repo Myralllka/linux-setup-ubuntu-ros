@@ -8,6 +8,6 @@ pacman --noconfirm -S git
 
 echo "running the main install.sh"
 
-./install.sh --unattended
+./install.sh
 
 echo "install part ended"
