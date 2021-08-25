@@ -65,7 +65,7 @@ yay -S ytop --noconfirm
 # install NVIM
 
 # install ZSH
-yay -S zsh --noconfirm
+sudo pacman -S zsh --noconfirm
 # install oh my zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -75,7 +75,8 @@ export ./appconfig/zsh/install_syntax_plugin.sh
 export ./appconfig/zsh/install_z_plugin.sh
 
 # install i3
-yay -S i3 i3-gaps polybar --noconfirm
+sudo pacman -S i3 i3-gaps --noconfirm
+yay -S polybar
 
 # install LATEX and PDF support
 
