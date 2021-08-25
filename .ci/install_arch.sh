@@ -2,7 +2,7 @@
 
 set -e
 
-pacman -S git
+pacman --noconfirm -S git
 
 echo "running the main install.sh"
 
