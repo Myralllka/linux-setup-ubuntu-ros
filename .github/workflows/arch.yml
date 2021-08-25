@@ -18,4 +18,6 @@ jobs:
           pacman --noconfirm -Suy
           pacman -S --needed --noconfirm git jq pacman-contrib openssh curl
       - name: Test installation
-        run: git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup && ls && pwd && bash ./.ci/install_arch.sh;
+        run: |
+          ls -la
+          git clone https://github.com/Myralllka/linux-setup.git && cd linux-setup && ls -la && bash ./.ci/install_arch.sh;
