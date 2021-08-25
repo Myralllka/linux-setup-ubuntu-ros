@@ -12,6 +12,7 @@ jobs:
     container:
       image: archlinux
     steps:
+      - uses: actions/checkout@v2
       - name: Update Arch
         run: |
           pacman --noconfirm -Suy
