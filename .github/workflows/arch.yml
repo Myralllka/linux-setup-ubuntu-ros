@@ -19,5 +19,6 @@ jobs:
           pacman -S --needed --noconfirm git jq pacman-contrib openssh curl
       - name: Test installation
         run: |
-          ls -la
-          bash .ci/install_arch.sh;
+          ls -la .ci
+          cd .ci
+          ./install_arch.sh
