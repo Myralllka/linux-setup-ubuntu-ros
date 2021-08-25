@@ -12,7 +12,7 @@ jobs:
     container:
       image: archlinux
     steps:
-      - uses: mijailr/arch-makepkg-action@v1.0.1
+      - uses: actions/checkout@v2
       - name: Update Arch
         run: |
           pacman --noconfirm -Suy
