@@ -75,7 +75,7 @@ source ./appconfig/zsh/install_syntax_plugin.sh
 source ./appconfig/zsh/install_z_plugin.sh
 
 # install i3
-sudo pacman -S i3 i3-gaps --noconfirm
+sudo pacman -S i3 i3-gaps wmctrl --noconfirm
 yay -S polybar
 
 # install LATEX and PDF support
