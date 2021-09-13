@@ -21,7 +21,7 @@ sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm --noconfirm
 
 
 # base
-sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry --noconfirm
+sudo pacman -S git curl wget ncurses arm-none-eabi-gcc blueberry xclip --noconfirm
 
 
 # install yay 
@@ -35,7 +35,7 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay; makepkg -si; 
 
 sudo pacman -Sy
 
-yay -S ipython jupyter-console powerline edex-ui ruby-colorls --noconfirm 
+yay -S ipython jupyter-console powerline edex-ui ruby-colorls awesome-terminal-fonts --noconfirm 
 
 yay -S gnome sddm ruby sl gparted espeak google-chrome slack chrome-gnome-shell classroom-assistant clion zoom telegram-desktop checkupdates-systemd-git perl-anyevent perl-anyevent-i3 --noconfirm
 
@@ -77,6 +77,8 @@ source ./appconfig/zsh/install_z_plugin.sh
 # install i3
 sudo pacman -S i3 i3-gaps wmctrl --noconfirm
 yay -S polybar
+
+source ./appconfig/polybar/install_polybar.sh
 
 # install LATEX and PDF support
 
