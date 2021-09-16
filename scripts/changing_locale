@@ -1,0 +1,14 @@
+#!/bin/bash
+i3subscribe window | \
+while read -r line; do
+	if [ "$line" = 'window:focus' ]; then
+		echo here $line
+    id="$(xprop -root _NET_ACTIVE_WINDOW | awk '{print $5}')"
+    case "$(xprop -id "$id" WM_CLASS | cut -d\" -f4)" in
+	chromium)       kb=us;;
+	terminology)    kb=us;;
+        *)              kb=us;;
+    esac
+    xkb-switch -s $kb
+fi;
+done
