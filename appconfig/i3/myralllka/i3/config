@@ -15,7 +15,6 @@ set $alt Mod1
 set $ctrl Mod3
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -27,8 +26,9 @@ font pango:DejaVu Sans Mono 16
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym $alt+l exec i3lock
+bindsym $alt+l exec i3lock --color 000000
 
+bindsym $alt+l exec --no-startup-id i3lock -c 000000
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -44,23 +44,23 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminology
+bindsym $alt+Return exec terminology
 
 # start a chromium
-bindsym $alt+c exec chromium
-bindsym $alt+p exec google-chrome-stable
+bindsym $mod+c exec chromium
+bindsym $mod+p exec google-chrome-stable
 
 # start ytop
-bindsym $alt+g exec terminology -e ytop
+bindsym $mod+g exec terminology -e ytop
 
 # start nautilus 
-bindsym $alt+n exec nautilus
+bindsym $mod+n exec nautilus
 
 # start ranger
-bindsym $alt+r exec terminology -e ranger
+bindsym $mod+r exec terminology -e ranger
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $alt+Shift+q kill
 
 # don't steal focus
 focus_on_window_activation smart
@@ -75,7 +75,7 @@ bindsym $mod+y fullscreen disable; floating enable; resize set 800 500; sticky e
 
 
 # start telegram desktop
-bindsym $alt+t exec telegram-desktop
+bindsym $mod+t exec telegram-desktop
 
 # start dmenu (a program launcher)
 # bindsym mod+d exec dmenu_run
@@ -86,68 +86,69 @@ bindsym $alt+t exec telegram-desktop
 new_window pixel 1
 
 # workspace switching
-bindsym $mod+Tab workspace back_and_forth
+bindsym $alt+Tab workspace back_and_forth
 workspace_auto_back_and_forth no
 
-bindsym $alt+a exec "rofi -modi drun,run -show drun -font 'DejaVu Sans 16' -show-icons"
+bindsym $mod+a exec "rofi -modi drun,run -show drun -font 'DejaVu Sans 16' -show-icons"
 bindsym $mod+d exec "rofi -modi drun,run -show drun -font 'DejaVu Sans 16' -show-icons"
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $alt+braceright split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $alt+braceleft split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $alt+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
 
+bindsym $alt+b bar mode toggle
 # toggle tiling / floating
-bindsym $mod+Shift+a floating toggle
+bindsym $alt+Shift+a floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+s focus mode_toggle
+bindsym $alt+Shift+s focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $alt+a focus parent
 
 # focus the child container
-bindsym $mod+z focus child
+bindsym $alt+q focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0"
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws0 "0: "
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -169,20 +170,20 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $alt+Shift+1 move container to workspace number $ws1
+bindsym $alt+Shift+2 move container to workspace number $ws2
+bindsym $alt+Shift+3 move container to workspace number $ws3
+bindsym $alt+Shift+4 move container to workspace number $ws4
+bindsym $alt+Shift+5 move container to workspace number $ws5
+bindsym $alt+Shift+6 move container to workspace number $ws6
+bindsym $alt+Shift+7 move container to workspace number $ws7
+bindsym $alt+Shift+8 move container to workspace number $ws8
+bindsym $alt+Shift+9 move container to workspace number $ws9
+bindsym $alt+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $alt+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -233,22 +234,16 @@ bindsym Print       exec flameshot full -c
 bindsym Shift+Print exec flameshot gui
 
 # autostart
-# exec_always --no-startup-id setxkbmap 'us,ua', 'grp:win_space_toogle' 
-# exec --no-startup-id changing_locale
-# exec --no-startup-id keyboard
 
 # background wallpaper
 exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/arch_nord.png
 
 
 # Bluetooth (blueberry)
-bindsym $alt+b exec --no-startup-id blueberry
+bindsym $mod+b exec --no-startup-id blueberry
 
 # Slack 
-bindsym $alt+s exec --no-startup-id slack
-
-# Virtual box
-bindsym $alt+v exec --no-startup-id virtualbox
+bindsym $mod+s exec --no-startup-id slack
 
 # guake
 exec --no-startup-id guake
@@ -258,14 +253,13 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # conky
 
-
 # for_window [class=".*"] border pixel 4
 hide_edge_borders both
-default_floating_border pixel 3
+default_floating_border pixel 2
 
 ## gaps
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
 # class                 border  bground text    indicator child_border
 client.focused          #8FBCBB #8FBCBB #ECEFF4 #8FBCBB   #D08770
 client.focused_inactive #2E3440 #2E3440 #ECEFF4 #2E3440   #5F676A
