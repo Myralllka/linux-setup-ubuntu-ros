@@ -71,7 +71,7 @@ focus_follows_mouse no
 hide_edge_borders smart
 
 # put YouTube into fullscreen and execute this for media mode
-bindsym $mod+y fullscreen disable; floating enable; resize set 800 500; sticky enable; move window to position 1120 580
+bindsym $alt+y fullscreen disable; floating enable; resize set 800 500; sticky enable; move window to position 1120 580
 
 
 # start telegram desktop
