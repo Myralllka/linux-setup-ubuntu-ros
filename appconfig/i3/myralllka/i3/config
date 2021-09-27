@@ -26,9 +26,8 @@ font pango:DejaVu Sans Mono 16
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym $alt+l exec i3lock --color 000000
 
-bindsym $alt+l exec --no-startup-id i3lock -c 000000
+bindsym $mod+l exec --no-startup-id i3lock -c 000000
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -57,7 +56,7 @@ bindsym $mod+g exec terminology -e ytop
 bindsym $mod+n exec nautilus
 
 # start ranger
-bindsym $mod+r exec terminology -e ranger
+bindsym $alt+r exec terminology -e ranger
 
 # kill focused window
 bindsym $alt+Shift+q kill
@@ -99,10 +98,10 @@ bindsym $alt+k focus up
 bindsym $alt+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $alt+Left focus left
-bindsym $alt+Down focus down
-bindsym $alt+Up focus up
-bindsym $alt+Right focus right
+#bindsym $alt+Left focus left
+#bindsym $alt+Down focus down
+#bindsym $alt+Up focus up
+#bindsym $alt+Right focus right
 
 # move focused window
 bindsym $alt+Shift+h move left
@@ -209,7 +208,6 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
