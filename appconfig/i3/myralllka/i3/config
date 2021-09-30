@@ -43,7 +43,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $alt+Return exec terminology
+bindsym $mod+Return exec terminology
 
 # start a chromium
 bindsym $mod+c exec chromium
