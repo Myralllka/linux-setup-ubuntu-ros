@@ -18,12 +18,12 @@ if [ -e $HOME/.oh-my-zsh/custom/plugins/k ]; then
   plugins+=(k)
 fi
 # check for k plugin
-if [ -e $HOME/.oh-my-zsh/custom/plugins/zsh-z]; then
+if [ -e $HOME/.oh-my-zsh/custom/plugins/zsh-z ]; then
   plugins+=(zsh-z)
 fi
 
 # check for k plugin
-if [ -e $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions]; then
+if [ -e $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
   plugins+=(zsh-autosuggestions)
 fi
 
