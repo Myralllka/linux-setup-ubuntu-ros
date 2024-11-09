@@ -35,13 +35,8 @@ while true; do
   then
 
     toilet Setting up powerline fonts
-
-    cd $APP_PATH/../../submodules/fonts
-
-    # apply our patch to change the font installation dir
-    # git apply $APP_PATH/patch.patch
-
-    ./install.sh
+	
+	sudo apt-get install fonts-powerline
 
     # make Terminus work
     mkdir -p ~/.config/fontconfig/conf.d

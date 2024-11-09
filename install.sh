@@ -65,7 +65,7 @@ else
 fi
 
 # other stuff
-sudo apt-get -y install ruby sl indicator-multiload figlet toilet gem tree exuberant-ctags xclip xsel exfat-fuse exfat-utils blueman autossh jq xvfb gparted espeak
+sudo apt-get -y install ruby indicator-multiload figlet toilet gem tree exuberant-ctags xclip xsel exfat-fuse exfat-utils blueman autossh jq xvfb gparted espeak
 
 if [ "$unattended" == "0" ]
 then
@@ -81,19 +81,13 @@ bash $APPCONFIG_PATH/ranger/install.sh $subinstall_params
 # install VIM
 bash $APPCONFIG_PATH/vim/install.sh $subinstall_params
 
-# install HTOP-VIM
-bash $APPCONFIG_PATH/htop-vim/install.sh $subinstall_params
-
-# install URXVT
-bash $APPCONFIG_PATH/urxvt/install.sh $subinstall_params
-
 # install FONTS POWERLINE
 bash $APPCONFIG_PATH/fonts-powerline/install.sh $subinstall_params
 
 # install NVIM
 bash $APPCONFIG_PATH/nvim/install.sh $subinstall_params
 
-# install ZSH with ATHAME
+# install ZSH 
 bash $APPCONFIG_PATH/zsh/install.sh $subinstall_params
 
 # install I3

@@ -88,32 +88,8 @@ while true; do
     make clean
     git clean -fd
 
-    # compile i3
-    cd $APP_PATH/../../submodules/i3/
-    autoreconf --force --install
-    rm -rf build/
-    mkdir -p build && cd build/
-
-    # Disabling sanitizers is important for release versions!
-    # The prefix and sysconfdir are, obviously, dependent on the distribution.
-    ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-    make
-    sudo make install
-
-    # clean after myself
-    git reset --hard
-    git clean -fd
-
-    # compile i3 blocks
-    cd $APP_PATH/../../submodules/i3blocks/
-    ./autogen.sh
-    ./configure
-    make
-    sudo make install
-
-    # clean after myself
-    git reset --hard
-    git clean -fd
+    # install i3
+	sudo apt install i3
 
     # for cpu usage in i3blocks
     sudo apt-get -y install sysstat

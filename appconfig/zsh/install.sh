@@ -44,8 +44,15 @@ while true; do
 	# symlink the .zshrc
     num=`cat $HOME/.zshrc | grep "dotzshrc" | wc -l`
 	if [ "$num" -lt "1" ]; then
-		cp $APP_PATH/dotzshrc_template $HOME/.zshrc
+		ln -sf $APP_PATH/dotzshrc $HOME/.zshrc
 	fi
+	
+	# install plugins:
+  	git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k;
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	git clone https://github.com/agkozak/zsh-z $HOME/.oh-my-zsh/plugins/zsh-z
+	
     break
   else
     echo " What? \"$resp\" is not a correct answer. Try y+Enter."
