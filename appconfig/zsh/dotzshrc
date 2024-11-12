@@ -1,0 +1,65 @@
+export ZSH="/home/myralllka/.oh-my-zsh"
+
+ZSH_THEME="xiong-chiamiov-plus"
+HYPHEN_INSENSITIVE="true"
+DISABLE_UPDATE_PROMPT="true"
+COMPLETION_WAITING_DOTS="true"
+plugins=(git
+#	zsh-autocomplete
+	zsh-fzf-history-search
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	zsh-z
+	k
+)
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+setopt hist_ignore_all_dups
+
+
+source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit
+export MANPATH="/usr/local/man:$MANPATH"
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
+
+alias l='k'
+alias ra='ranger'
+alias p='ipython'
+alias pip3='pip'
+alias fzf='fzf --height 40%'
+alias c='xargs echo -n | xclip -selection c'
+
+#if [  "$TMUX" = "" ]; then tmux; fi
+export PATH=/opt/cuda/bin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/lib/jvm/java-11-openjdk/bin:$PATH"
+
+setxkbmap -model pc105 -layout us,ua -option grp:win_space_toggle
+export PATH=~/.local/bin:"$PATH"
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+
+# zsh-autocomplete
+bindkey '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+# Autocompletion
+zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 3 )) )'
+# Override history search.
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+
+# nice terminal
+export TERM=xterm-256color
+
+# ROS
+source /opt/ros/noetic/setup.zsh
+source ~/catkin_ws/devel/setup.zsh
+export ROS_IP=10.42.0.1
+export ROS_MASTER_URI=http://10.42.0.35:11311/
+
+# GStreamer plugins
+export GST_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/gstreamer-1.0:$GST_PLUGIN_PATH
+
