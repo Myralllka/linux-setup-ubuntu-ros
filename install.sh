@@ -15,7 +15,6 @@ MY_PATH=`( cd "$MY_PATH" && pwd )`
 APPCONFIG_PATH=$MY_PATH/appconfig
 
 cd $MY_PATH
-git submodule update --init --recursive
 
 MY_DISTRO=$(cat /etc/*-release | tr [:upper:] [:lower:] | grep -Poi '(debian|ubuntu|manjaro|arch)' | uniq | head -n 1)
 

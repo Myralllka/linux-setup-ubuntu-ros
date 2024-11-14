@@ -91,7 +91,6 @@ while true; do
         sudo apt-get -y install libboost-all-dev
 
         cd ~/.vim/plugged/YouCompleteMe/
-        git submodule update --init --recursive
         python3 ./install.py --clangd-completer
 
         # link .ycm_extra_conf.py
